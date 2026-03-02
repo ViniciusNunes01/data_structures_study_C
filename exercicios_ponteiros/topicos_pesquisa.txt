@@ -1,0 +1,189 @@
+================================================================================
+TÓPICOS PARA PESQUISA - EXERCÍCIOS DE PONTEIROS
+================================================================================
+
+Use este arquivo como guia quando estiver preso em um exercício.
+Pesquise os tópicos sugeridos para cada exercício.
+Não há respostas aqui, apenas dicas sobre o que estudar!
+
+================================================================================
+SEÇÃO 1: CONCEITOS BÁSICOS DE PONTEIROS
+================================================================================
+
+EXERCÍCIO 1.1 - Declaração e Inicialização
+Pesquise:
+- Sintaxe de declaração de ponteiros em C (int* ptr)
+- Operador de endereço (&)
+- Inicialização de ponteiros
+- Desreferência de ponteiros (*)
+
+EXERCÍCIO 1.2 - Operadores & e *
+Pesquise:
+- Diferença entre & (address-of) e * (dereference)
+- Como obter o endereço de uma variável local
+- Formato de impressão para endereços com printf (%p)
+- Escopo de variáveis locais
+
+EXERCÍCIO 1.3 - Ponteiros e Arrays
+Pesquise:
+- Relação entre arrays e ponteiros em C
+- Aritmética de ponteiros (ptr++, ptr + n)
+- Arrays como ponteiros constantes
+- Notação equivalente: array[i] vs *(array + i)
+
+================================================================================
+SEÇÃO 2: PONTEIROS E FUNÇÕES
+================================================================================
+
+EXERCÍCIO 2.1 - Passagem por Referência
+Pesquise:
+- Passagem por valor vs passagem por referência
+- Como usar ponteiros para modificar variáveis da função chamadora
+- Técnica de swap/troca de variáveis
+- Função prototype
+
+EXERCÍCIO 2.2 - Retorno de Ponteiro
+Pesquise:
+- Alocação dinâmica com malloc()
+- Função sizeof()
+- Como retornar um ponteiro de uma função
+- Necessidade de liberar memória com free()
+- Ciclo de vida de memória alocada
+
+EXERCÍCIO 2.3 - Ponteiros como Parâmetros
+Pesquise:
+- Passagem de array por função
+- Uso de ponteiros para retornar múltiplos valores
+- Aritmética de ponteiros em loops
+- Variáveis de saída (output parameters)
+
+================================================================================
+SEÇÃO 3: ALOCAÇÃO DINÂMICA DE MEMÓRIA
+================================================================================
+
+EXERCÍCIO 3.1 - malloc e free
+Pesquise:
+- Função malloc() e seu retorno
+- Função free() para liberar memória
+- Verificação se malloc foi bem-sucedida (NULL)
+- Alocação contígua de memória
+- Loop para preencher array alocado
+
+EXERCÍCIO 3.2 - Alocação de Estrutura
+Pesquise:
+- Definição de struct em C
+- Alocação dinâmica de estruturas
+- Acesso a membros de struct via ponteiro (->)
+- Funções para ler dados do usuário
+- Limpeza de memória alocada para struct
+
+EXERCÍCIO 3.3 - Alocação de Array Dinâmico
+Pesquise:
+- Alocação dinâmica de float
+- Cálculo de média aritmética
+- Receita: alocar -> preencher -> processar -> liberar
+- Passagem de array alocado entre funções
+
+================================================================================
+SEÇÃO 4: AVANÇADOS
+================================================================================
+
+EXERCÍCIO 4.1 - Ponteiro para Ponteiro
+Pesquise:
+- Sintaxe de ponteiro para ponteiro (int** ptr)
+- Múltiplas desreferências (**)
+- Casos de uso de ponteiros para ponteiros
+- Endereço de cada nível de indireção
+
+EXERCÍCIO 4.2 - Alocação de Matriz Dinâmica
+Pesquise:
+- Matriz como array de ponteiros (int** matriz)
+- Duas passagens de malloc (primeira para linhas, depois para cada linha)
+- Acesso a elementos da matriz (matriz[i][j] ou *(*(matriz + i) + j))
+- Liberação correta da memória (free em ordem reversa)
+- Alternativa: alocação contígua com único malloc
+
+EXERCÍCIO 4.3 - Estrutura com Ponteiros
+Pesquise:
+- Struct que contém um ponteiro para array
+- Funções para gerenciar lista dinâmica
+- Conceitos de tamanho (size) e capacidade (capacity)
+- Adição e remoção de elementos
+- Destruição completa da estrutura
+
+================================================================================
+SEÇÃO 5: EXERCÍCIOS PRÁTICOS
+================================================================================
+
+EXERCÍCIO 5.1 - Função que Modifica Array
+Pesquise:
+- Passagem de array por referência implícita
+- Modificação de valores através de ponteiro
+- Loop com aritmética de ponteiros
+- Operadores de incremento e modificação (++)
+
+EXERCÍCIO 5.2 - Contagem de Elementos
+Pesquise:
+- Uso de aritmética de ponteiros sem índices
+- Comparação de valores para contar ocorrências
+- Loop com condição e incremento de ponteiro
+- Conceito de while com ponteiro
+
+EXERCÍCIO 5.3 - Cópia de Array
+Pesquise:
+- Diferença entre copiar ponteiro e copiar dados
+- Alocação de novo array
+- Cópia elemento por elemento
+- Função memcpy() como alternativa (pesquise se estiver interessado)
+
+EXERCÍCIO 5.4 - Inversão de Array
+Pesquise:
+- Inversão in-place (sem memória auxiliar)
+- Uso de dois ponteiros (inicio e fim)
+- Troca de valores (conceito do exercício 2.1)
+- Condição de parada para inversão
+
+EXERCÍCIO 5.5 - Busca e Retorno de Endereço
+Pesquise:
+- Retorno NULL para indicar falha
+- Teste de ponteiro nulo (if (ptr == NULL))
+- Busca linear em array
+- Retorno de endereço de memória (não cópia)
+
+================================================================================
+DICAS GERAIS DE PESQUISA
+================================================================================
+
+❌ EVITE:
+- Copiar respostas prontas
+- Usar ChatGPT para gerar código completo
+- Ignorar erros de compilação
+
+✅ FAÇA:
+- Compile frequentemente para encontrar erros
+- Teste com valores diferentes
+- Leia mensagens de erro do compilador
+- Imprima endereços e valores para debugar
+- Pesquise os tópicos sugeridos em:
+  * Documentação oficial de C
+  * Tutoriais de C sobre ponteiros
+  * Seu material da disciplina
+  * Livros como "The C Programming Language" (K&R)
+
+================================================================================
+CHECKLIST DE COMPILAÇÃO
+================================================================================
+
+Sempre verifique:
+☐ Arquivo compila sem erros com: gcc -Wall -Wextra exercicio_X_Y.c -o exercicio
+☐ Sem warnings no resultado
+☐ Programa executa sem crashes
+☐ Saída corresponde ao esperado
+☐ Memória alocada foi liberada (sem memory leaks)
+
+Para verificar memory leaks no Windows, você pode usar ferramentas como:
+- Visual Studio debugger
+- Dr. Memory
+- Valgrind (em WSL)
+
+================================================================================

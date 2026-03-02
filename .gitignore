@@ -1,0 +1,39 @@
+# Executáveis
+*.exe
+*.o
+*.out
+
+# Arquivos de compilação
+*.a
+*.so
+*.dylib
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema
+.DS_Store
+Thumbs.db
+# Arquivos temporários
+*.tmp
+*.temp
+*~
+
+# Arquivos de debug
+*.dSYM/
+*.su
+*.gch
+
+# Executáveis específicos do projeto
+exercicios_ponteiros/*.exe
+exercicios_ponteiros/*.o
+
+# Pasta de build (se usar)
+build/
+dist/
+
+# Arquivos de entrada/saída de testes
+*.in
