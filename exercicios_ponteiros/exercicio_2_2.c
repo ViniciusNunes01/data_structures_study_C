@@ -18,15 +18,33 @@ Array: 1 2 3 4 5
 #include <stdio.h>
 #include <stdlib.h>
 
-// Crie aqui a função que cria e retorna um array dinâmico
-// int* criar_array(int tamanho);
+int *criar_array(int tamanho)
+{
+    int *array = (int *)malloc(sizeof(int) * tamanho);
 
-int main() {
-    int n = 5;
-    
-    // Use a função para criar um array
-    // Imprima o array
-    // Libere a memória
-    
+    for (int i = 0; i < tamanho; i++)
+    {
+        *(array + i) = i + 1;
+    }
+    return array;
+}
+
+int main()
+{
+
+    int n = 0;
+
+    printf("\nInforme o tamanho do vetor: ");
+    scanf("%d", &n);
+
+    int *ptr = criar_array(n);
+
+    printf("Array: ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", *(ptr + i));
+    }
+
+    free(ptr);
     return 0;
 }
