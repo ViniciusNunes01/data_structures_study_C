@@ -19,13 +19,17 @@ Valor: 100
 #include <stdio.h>
 
 // Função para completar
-void imprimir_info(int valor) {
-    // Seu código aqui
+void imprimir_info(int valor)
+{
+    int *pValor = &valor;
+    printf("\nEndereco: %p", (void *)pValor);
+    printf("\nValor: %d", *pValor);
 }
 
-int main() {
+int main()
+{
     int numero = 100;
     imprimir_info(numero);
-    
+
     return 0;
 }

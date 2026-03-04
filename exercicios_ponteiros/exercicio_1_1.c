@@ -17,8 +17,13 @@ O valor usando ponteiro: 42
 
 #include <stdio.h>
 
-int main() {
-    // Seu código aqui
-    
+int main()
+{
+
+    int valor = 42;
+    int *pValor = &valor;
+
+    printf("\nO valor usando ponteiro: %d\n\n", *pValor);
+
     return 0;
 }
