@@ -18,4 +18,4 @@ int main()
     printf("Soma: %d", somaRecursiva(vetor, tamanho));
 
     return 0;
-}
+} 
