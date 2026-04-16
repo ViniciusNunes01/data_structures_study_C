@@ -1,8 +1,8 @@
-#include <stdio.h>
-
 // Escreva um programa com uma função recursiva estaOrdenado(int v[], int n) que retorne 1 se o vetor estiver em ordem crescente e 0 caso contrário.
 // No main, teste com o vetor {1, 3, 5, 8, 10}.
 // Proibido o uso de laços.
+
+#include <stdio.h>
 
 int estaOrdenado(int v[], int n)
 {
