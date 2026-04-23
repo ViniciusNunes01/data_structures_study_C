@@ -12,44 +12,62 @@ typedef struct Node
     struct Node *next;
 } Node;
 
-void insertNode(Node **topo, int v)
+void insertNode(Node **head, int v)
 {
-    Node *beforeNode = (Node *)malloc(sizeof(Node));
     Node *newNode = (Node *)malloc(sizeof(Node));
 
-    
+    if (newNode == NULL)
+    {
+        return;
+    }
 
     newNode->data = v;
-    newNode->next = *topo;
-    *topo = newNode;
+
+    if (*head == NULL || v <= (*head)->data)
+    {
+        newNode->next = *head;
+        *head = newNode;
+        return;
+    }
+
+    Node *current = *head;
+    while (current->next != NULL && current->next->data < v)
+    {
+        current = current->next;
+    }
+
+    newNode->next = current->next;
+    current->next = newNode;
 }
 
-float meanList(Node *topo)
+void printList(Node *head)
 {
-    if (topo == NULL)
-    {
-        return 0;
-    }
+    Node *current = head;
 
-    int sum = 0, count = 0;
-    Node *aux = topo;
-
-    while (aux != NULL)
+    while (current != NULL)
     {
-        sum += aux->data;
-        count++;
-        aux = aux->next;
+        printf("%d", current->data);
+        if (current->next != NULL)
+        {
+            printf(" -> ");
+        }
+        current = current->next;
     }
-    return (float)(sum / count);
+    printf("\n");
 }
 
 int main()
 {
 
     Node *list = NULL;
-    insertNode(&list, 10);
     insertNode(&list, 20);
+    insertNode(&list, 10);
     insertNode(&list, 30);
+    insertNode(&list, 22);
+    insertNode(&list, 25);
+    insertNode(&list, 2);
+
+    printList(list);
 
     return 0;
 }
