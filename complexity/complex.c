@@ -33,3 +33,8 @@ int main()
 {
     return 0;
 }
+
+// Trabalho
+// -> Escala de prioridade
+// -> Implementação
+// -> Análise de Complexidade Temporal
