@@ -1,0 +1,81 @@
+RELATÓRIO - SISTEMA DE GERENCIAMENTO DE UPA
+
+1. Classificação de risco utilizada no Brasil
+
+No atendimento de urgência e emergência, a triagem por classificação de risco é usada para definir quem deve ser atendido primeiro. 
+No Brasil, uma das metodologias mais conhecidas e utilizadas é o Protocolo de Manchester.
+
+Esse protocolo separa os pacientes em cinco cores, de acordo com a gravidade do caso:
+
+- Vermelho: atendimento imediato, quando existe risco de morte ou necessidade de intervenção urgente.
+- Laranja: muito urgente, com espera muito curta.
+- Amarelo: urgente, mas sem risco imediato de morte.
+- Verde: pouco urgente, para casos leves.
+- Azul: não urgente, quando o paciente pode aguardar mais tempo.
+
+No sistema desenvolvido, essas prioridades foram representadas por números de 0 a 4, para facilitar o uso no código. 
+Assim, 0 representa Vermelho e 4 representa Azul.
+
+
+
+2. Como o sistema foi implementado
+
+A ideia principal do trabalho foi organizar os pacientes em filas separadas por prioridade. 
+Em vez de usar uma fila única, o programa usa cinco filas, uma para cada nível de classificação.
+
+Cada paciente possui os seguintes dados:
+
+- ID
+- Nome
+- Idade
+- Classificação de risco
+- Hora de chegada
+
+Para armazenar os pacientes, foi usada uma estrutura de lista encadeada simples.
+Cada fila tem um ponteiro para o início e outro para o final, o que permite inserir pacientes sem precisar percorrer toda a fila.
+
+As funções principais do sistema são estas:
+
+- inicializarFilas: deixa todas as filas vazias no começo do programa.
+- cadastrarPaciente: cria um novo paciente e o coloca no final da fila correspondente à sua prioridade.
+- chamarPaciente: procura primeiro nas filas de maior prioridade e remove o primeiro paciente disponível para atendimento.
+- buscarPaciente: percorre todas as filas procurando um paciente pelo ID.
+
+Esse modelo funciona bem porque mantém a ordem de chegada dentro de cada prioridade e, ao mesmo tempo, respeita a urgência dos casos mais graves.
+
+Também foi feita a liberação de memória ao encerrar o programa, para evitar vazamento de memória.
+Cada paciente alocado dinamicamente é liberado antes do fim da execução.
+
+
+
+3. Análise de complexidade temporal
+
+A seguir está uma análise simples do custo de cada operação do programa.
+
+- inicializarFilas: O(1)
+  O programa sempre trabalha com apenas cinco filas, então essa operação é constante.
+
+- cadastrarPaciente: O(1)
+  O paciente é inserido no final da fila usando o ponteiro tail, sem precisar percorrer a lista.
+
+- chamarPaciente: O(1)
+  Embora exista um laço, ele percorre no máximo cinco filas, e esse número não muda. Por isso, na prática, continua sendo tempo constante.
+
+- buscarPaciente: O(n)
+  No pior caso, o programa pode precisar percorrer todos os pacientes cadastrados até encontrar o ID procurado.
+
+- liberação de memória: O(n)
+  Também é necessário percorrer todos os pacientes para liberar a memória alocada.
+
+Na prática, as operações mais importantes do sistema, que são cadastrar e chamar pacientes, têm desempenho muito bom.
+A busca por ID é a única parte que cresce conforme aumenta a quantidade de pacientes.
+
+
+
+4. Conclusão
+
+O trabalho atende ao enunciado proposto, pois implementa o cadastro de pacientes, a chamada por prioridade e a busca por ID. 
+A organização em cinco filas separadas deixa o sistema simples e eficiente para o objetivo do trabalho.
+Além disso, o programa segue a lógica do Protocolo de Manchester, respeitando a ordem de atendimento pela gravidade do caso.
+A solução também trata corretamente a alocação e liberação de memória, o que é importante em programas escritos em C.
+

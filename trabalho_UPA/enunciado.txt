@@ -1,0 +1,17 @@
+O trabalho final consiste na criação de um sistema de gerenciamento de uma UPA (Unidade de Pronto Atendimento), cujas funcionalidades são a de cadastro de novo paciente na fila e chamamento de paciente por classificação de risco, dada a escala oficial de prioridade utilizada no Brasil.
+
+O cadastro de paciente deve conter, no mínimo:
+
+1. ID
+2. Nome
+3. Idade
+4. Classificação de Risco
+5. Hora da Chegada
+
+Você é livre para fazer a implementação de outras funcionalidades, como busca de paciente.
+
+É necessário entregar, além do código fonte do sistema, um relatório contendo:
+
+1. Classificação de Risco utilizada no Brasil
+2. Implementação: como os problemas foram resolvidos
+3. Análise de complexidade temporal do software proposto
